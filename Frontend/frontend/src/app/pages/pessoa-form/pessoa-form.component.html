@@ -1,0 +1,34 @@
+<div class="content-container">
+
+
+    <h1>{{titulo}}</h1>
+
+    <form>
+        <label for="input-id">ID</label><br>
+        <input class="input-id" id="input-id" placeholder="Digite o Id" type="text" [(ngModel)]="pessoa.id" name="id"/>
+      
+        <label for="input-nome">Nome</label><br>
+        <input class="input-simples" id="input-nome" placeholder="Digite o seu Nome" type="text" [(ngModel)]="pessoa.name" name="name"/>
+      
+        <label for="input-nascimento">Data de Nascimento</label><br>
+        <input class="input-simples" id="input-nascimento" type="date" [(ngModel)]="pessoa.dataNascimento" name="dataNascimento"/>
+      
+        <label for="input-cpf">CPF</label><br>
+        <input class="input-simples" id="input-cpf" placeholder="Digite o CPF" type="text" [(ngModel)]="pessoa.cpf" name="cpf"/>
+      
+        <label for="input-sexo">Sexo</label><br>
+        <input class="input-simples" id="input-sexo" placeholder="Digite o Sexo" type="text" [(ngModel)]="pessoa.sexo" name="sexo"/>
+      
+        <label for="input-altura">Altura</label><br>
+        <input class="input-simples" id="input-altura" placeholder="Digite a Altura" type="number" [(ngModel)]="pessoa.altura" name="altura"/>
+      
+        <label for="input-peso">Peso</label><br>
+        <input class="input-simples" id="input-peso" placeholder="Digite o Peso" type="number" [(ngModel)]="pessoa.peso" name="peso"/>
+      
+        <button type="button" class="input-submeter" (click)="submeter()">
+          {{ pessoaId ? 'Salvar Alterações' : 'Cadastrar' }}
+        </button>
+        
+      </form>
+
+</div>

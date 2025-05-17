@@ -1,0 +1,48 @@
+<div class="content-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Data Nascimento</th>
+                <th>Sexo</th>
+                <th>Altura</th>
+                <th>Peso</th>
+                <th>Peso Ideal</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (pessoa of listaPessoas; track pessoa) {
+                <tr>
+                    <td>{{pessoa.id}}</td> 
+                    <td>{{pessoa.name}}</td>
+                    <td>{{pessoa.dataNascimento}}</td>
+                    <td>{{pessoa.sexo}}</td>
+                    <td>{{pessoa.altura}}</td>
+                    <td>{{pessoa.peso}}</td>
+                    <td>
+                        <button class="btn-peso" (click)="abrirPopup(pessoa)">Ver Peso Ideal</button>
+                    <td>
+                        <button class="btn-editar" [routerLink] ="['alterar',pessoa.id]">Editar</button>
+                        <button class="btn-excluir" (click) ="excluir(pessoa.id!)">Excluir</button>
+                    </td>
+
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+    <button class="btn-incluir" routerLink="/pessoas/incluir">Incluir</button>
+
+    <div [ngStyle]="{ display: modalAberto ? 'flex' : 'none' }" class="modal">
+        <div class="modal-content">
+            <h2>Peso Ideal</h2>
+            <p>{{ pessoaSelecionada?.pesoIdeal.toFixed(2)}}</p>
+            <button class="btn-fechar" (click)="fecharPopup()">Fechar</button>
+        </div>
+    </div>
+
+</div>

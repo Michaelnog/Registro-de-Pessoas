@@ -1,0 +1,17 @@
+<div class="login-container">
+  <form>
+    <label for="user">Login</label><br />
+    <input class="input-simples" id="user" name="user" type="user" placeholder="Digite nome do usuario" [(ngModel)] = "login" />
+
+
+    <label for="input-senha">senha</label><br />
+    <input class="input-simples" id="input-senha" name="input-senha" type="password" placeholder="Digite sua senha" [(ngModel)] = "senha" />
+
+    <button class="input-submeter"
+     [disabled] = "!login || !senha"
+     (click)="onBotaoClicado();"
+     >
+      Confirmar
+    </button>
+  </form>
+</div>
